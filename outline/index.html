@@ -18,6 +18,9 @@
       --coffee-dark: #3a221d;
       --coffee-rich: #5c352c;
       --coffee-accent: #8b5242;
+      --sky-blue: #75c6e8;
+      --sky-blue-deep: #2a4c68;
+      --sky-blue-footer: #1e3a52;
       --gold: #d4a359;
       --gold-light: #fae8ca;
       --line: #f3d4dc;
@@ -948,20 +951,20 @@
     }
 
     /* =========================================================
-       頁尾 (Footer)
+       頁尾 (Footer) - 依據 onepage.md 規格設定天空藍深色系
        ========================================================= */
     .site-footer {
-      background: #2a1713;
-      color: rgba(255, 255, 255, 0.7);
+      background: linear-gradient(135deg, var(--sky-blue-footer) 0%, #15293c 100%);
+      color: rgba(255, 255, 255, 0.78);
       padding: 60px 0 25px;
-      border-top: 1px solid rgba(255, 117, 151, 0.15);
+      border-top: 2px solid rgba(117, 198, 232, 0.3);
     }
     .footer-grid {
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr;
       gap: 40px;
       padding-bottom: 45px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
     .footer-brand h4 {
       color: var(--white);
@@ -969,16 +972,17 @@
       margin: 0 0 12px;
       font-weight: 800;
     }
-    .footer-brand h4 span { color: var(--pink-primary); }
+    .footer-brand h4 span { color: var(--sky-blue); }
     .footer-brand p {
       font-size: 13.5px;
       line-height: 1.8;
       max-width: 320px;
       margin: 0;
+      color: rgba(255, 255, 255, 0.72);
     }
 
     .footer-heading {
-      color: #ff9bb5;
+      color: var(--sky-blue);
       font-size: 12px;
       font-weight: 800;
       letter-spacing: .12em;
@@ -991,6 +995,10 @@
       font-size: 13.5px;
     }
     .footer-list li + li { margin-top: 10px; }
+    .footer-list a {
+      color: rgba(255, 255, 255, 0.8);
+      transition: color .2s ease;
+    }
     .footer-list a:hover { color: var(--white); }
 
     .footer-bottom {
@@ -999,9 +1007,9 @@
       align-items: center;
       padding-top: 22px;
       font-size: 12px;
-      color: rgba(255, 255, 255, 0.45);
+      color: rgba(255, 255, 255, 0.55);
     }
-    .footer-bottom span + span { color: var(--pink-primary); }
+    .footer-bottom span + span { color: var(--sky-blue); }
 
     /* =========================================================
        Toast 通知彈窗
@@ -1198,10 +1206,10 @@
           </div>
         </div>
 
-        <!-- Hero 右側互動手沖卡片 -->
+        <!-- Hero 右側互動手沖卡片 (依據 onepage.md 最新規格，值班女僕為 Mizu) -->
         <div class="hero-visual-card">
           <div class="maid-greeting">
-            <span>(◍•ᴗ•◍)</span> 今日值班女僕「櫻乃」為您服務中
+            <span>(◍•ᴗ•◍)</span> 今日值班女僕「Mizu」為您服務中
           </div>
 
           <!-- 純 CSS 女僕手沖器具繪製 -->
@@ -1391,14 +1399,14 @@
             <div class="interactive-maid-avatar" aria-hidden="true">🎀</div>
             <div class="dialogue-bubble">
               <p class="dialogue-text" id="maidDialogue">
-                「主人～今天上班辛苦了！讓女僕為您調製一杯香甜的花果香手沖，掃去一整天的疲憊吧♡」
+                「主人～今天上班辛苦了！讓女僕 Mizu 為您調製一杯香甜的花果香手沖，掃去一整天的疲憊吧♡」
               </p>
             </div>
             <div class="maid-buttons-group">
               <button class="interact-btn" type="button" data-phrase="「主人！今天推薦您品嚐藝伎咖啡，帶有淡淡茉莉花香，就像女僕的心意一樣純淨呢♡」">
                 <span>💬</span> 請女僕推薦今日咖啡豆
               </button>
-              <button class="interact-btn" type="button" data-phrase="「美味變變變～萌え萌えキュン！這杯咖啡注入了女僕的滿滿元氣，主人喝了要元氣滿滿喔✨」">
+              <button class="interact-btn" type="button" data-phrase="「美味變變變～萌え萌えキュン！這杯咖啡注入了女僕 Mizu 的滿滿元氣，主人喝了要元氣滿滿喔✨」">
                 <span>🪄</span> 施展美味加倍魔法咒語
               </button>
               <button class="interact-btn" type="button" data-phrase="「好的主人！女僕正在為您手寫專屬風味卡，待會會親手送到您手中喔♡」">
@@ -1484,7 +1492,7 @@
     </section>
   </main>
 
-  <!-- 頁尾 -->
+  <!-- 頁尾 (依據 onepage.md 最新規格，採用天空藍深色系) -->
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div class="footer-brand">
@@ -1584,7 +1592,7 @@
     const magicSpellBtn = document.getElementById('magicSpellBtn');
     magicSpellBtn.addEventListener('click', () => {
       burstHearts(22);
-      showToast('✨ 萌え萌えキュン～女僕已為咖啡注入美味魔法！甜感升級 100% ♡');
+      showToast('✨ 萌え萌えキュン～女僕 Mizu 已為咖啡注入美味魔法！甜感升級 100% ♡');
     });
 
     // 5. 點單收藏按鈕

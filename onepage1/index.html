@@ -390,7 +390,7 @@
     }
     .trust-item span { color: var(--pink-primary); font-size: 16px; }
 
-    /* Hero 右側互動卡與手沖視覺 (依據 onepage.md 最新規格，值班女僕為 Mizu) */
+    /* Hero 右側互動卡與手沖視覺 (依據 onepage1.md 規格，值班女僕為 Mizu，使用既有圖片) */
     .hero-visual-card {
       position: relative;
       background: var(--white);
@@ -418,73 +418,31 @@
       50% { transform: scale(1.03); }
     }
 
-    /* 純 CSS 手沖濾杯與女僕萌感幾何繪製 */
+    /* 右欄圖片 (依據 onepage1.md 規格：不使用 CSS 插畫，使用既有圖片 images/hero.jpg) */
     .visual-art-box {
       position: relative;
-      width: 260px;
-      height: 230px;
+      width: 100%;
+      max-width: 400px;
       margin: 0 auto 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 25px rgba(216, 67, 107, 0.15);
+      border: 2px solid #ffe3eb;
     }
-    .drip-stand {
-      position: relative;
-      width: 170px;
-      height: 105px;
-      border: 4px solid var(--pink-primary);
-      border-radius: 12px 12px 60px 60px;
-      background: linear-gradient(135deg, rgba(255, 238, 243, 0.8), rgba(255, 255, 255, 0.95));
-      clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
-      box-shadow: 0 8px 20px rgba(255, 117, 151, 0.2);
+    .hero-photo {
+      width: 400px;
+      max-width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      transition: transform .35s ease;
     }
-    .drip-stand::before {
-      content: "♡";
-      position: absolute;
-      top: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: var(--pink-deep);
-      font-size: 24px;
-      font-weight: bold;
-    }
-    .server-pot {
-      position: relative;
-      width: 140px;
-      height: 100px;
-      margin-top: -6px;
-      border: 4px solid #f0bac7;
-      border-radius: 10px 10px 45px 45px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.7) 30%, rgba(92, 53, 44, 0.85) 30%);
-      box-shadow: 0 10px 25px rgba(92, 53, 44, 0.15);
-    }
-    .server-pot::after {
-      content: "";
-      position: absolute;
-      bottom: 12px;
-      left: 18px;
-      right: 18px;
-      height: 16px;
-      background: rgba(255, 117, 151, 0.35);
-      border-radius: 20px;
-    }
-
-    .steam-bubble {
-      position: absolute;
-      top: 0;
-      color: var(--pink-primary);
-      font-size: 14px;
-      opacity: 0;
-      animation: riseSteam 3s infinite ease-out;
-    }
-    .steam-1 { left: 40%; animation-delay: 0.2s; }
-    .steam-2 { left: 52%; animation-delay: 1.2s; }
-    .steam-3 { left: 62%; animation-delay: 2.1s; }
-    @keyframes riseSteam {
-      0% { transform: translateY(20px) scale(0.6); opacity: 0; }
-      50% { opacity: 0.8; }
-      100% { transform: translateY(-30px) scale(1.2); opacity: 0; }
+    .hero-photo:hover {
+      transform: scale(1.03);
     }
 
     .card-coffee-spec {
@@ -1207,19 +1165,15 @@
           </div>
         </div>
 
-        <!-- Hero 右側互動手沖卡片 (依據 onepage.md 最新規格，值班女僕為 Mizu) -->
+        <!-- Hero 右側互動手沖卡片 (依據 onepage1.md 規格，值班女僕為 Mizu，使用既有圖片) -->
         <div class="hero-visual-card">
           <div class="maid-greeting">
             <span>(◍•ᴗ•◍)</span> 今日值班女僕「Mizu」為您服務中
           </div>
 
-          <!-- 純 CSS 女僕手沖器具繪製 -->
-          <div class="visual-art-box" aria-hidden="true">
-            <span class="steam-bubble steam-1">♡</span>
-            <span class="steam-bubble steam-2">♡</span>
-            <span class="steam-bubble steam-3">♡</span>
-            <div class="drip-stand"></div>
-            <div class="server-pot"></div>
+          <!-- 右欄圖片 (依據 onepage1.md 規格：不使用 CSS 插畫，使用既有圖片) -->
+          <div class="visual-art-box">
+            <img class="hero-photo" src="images/hero.jpg" width="400" height="300" alt="萌萃女僕手沖咖啡主視覺" onerror="if(this.src.indexOf('.jfif')===-1)this.src='images/hero.jfif';">
           </div>
 
           <div class="card-coffee-spec">

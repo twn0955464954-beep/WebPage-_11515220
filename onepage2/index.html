@@ -390,7 +390,7 @@
     }
     .trust-item span { color: var(--pink-primary); font-size: 16px; }
 
-    /* Hero 右側互動卡與手沖視覺 (依據 onepage1.md 規格，值班女僕為 Mizu，使用既有圖片) */
+    /* Hero 右側互動卡與手沖視覺 (依據 onepage2.md 規格，值班女僕為 Mizu，使用既有圖片) */
     .hero-visual-card {
       position: relative;
       background: var(--white);
@@ -418,7 +418,7 @@
       50% { transform: scale(1.03); }
     }
 
-    /* 右欄圖片 (依據 onepage1.md 規格：不使用 CSS 插畫，使用既有圖片 images/hero.jpg) */
+    /* 右欄圖片 (依據 onepage2.md 規格：不使用 CSS 插畫，使用既有圖片 images/Gemini_Generated_Image_8j1kzm8j1kzm8j1k.jpg) */
     .visual-art-box {
       position: relative;
       width: 100%;
@@ -1165,15 +1165,15 @@
           </div>
         </div>
 
-        <!-- Hero 右側互動手沖卡片 (依據 onepage1.md 規格，值班女僕為 Mizu，使用既有圖片) -->
+        <!-- Hero 右側互動手沖卡片 (依據 onepage2.md 規格，值班女僕為 Mizu，使用既有圖片) -->
         <div class="hero-visual-card">
           <div class="maid-greeting">
             <span>(◍•ᴗ•◍)</span> 今日值班女僕「Mizu」為您服務中
           </div>
 
-          <!-- 右欄圖片 (依據 onepage1.md 規格：不使用 CSS 插畫，使用既有圖片) -->
+          <!-- 右欄圖片 (依據 onepage2.md 規格：不使用 CSS 插畫，使用既有圖片) -->
           <div class="visual-art-box">
-            <img class="hero-photo" src="images/hero.jpg" width="400" height="300" alt="萌萃女僕手沖咖啡主視覺" onerror="if(this.src.indexOf('.jfif')===-1)this.src='images/hero.jfif';">
+            <img class="hero-photo" src="images/Gemini_Generated_Image_8j1kzm8j1kzm8j1k.jpg" width="400" height="300" alt="萌萃女僕手沖咖啡主視覺" onerror="if(this.src.indexOf('hero.jpg')===-1)this.src='images/hero.jpg';">
           </div>
 
           <div class="card-coffee-spec">
@@ -1547,7 +1547,7 @@
     const magicSpellBtn = document.getElementById('magicSpellBtn');
     magicSpellBtn.addEventListener('click', () => {
       burstHearts(22);
-      showToast('✨ 萌え萌えキュン～女僕 Mizu 已為咖啡注入美味魔法！甜感升級 100% ♡');
+      showToast('✨ 萌え萌えキュン～女僕已為咖啡注入美味魔法！甜感升級 100% ♡');
     });
 
     // 5. 點單收藏按鈕

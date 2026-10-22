@@ -1577,6 +1577,11 @@
       burstHearts(25);
       showToast(`預約成功！歡迎 ${name} 歸宅，9 折禮券已寄至您的信箱囉 ♡`);
       reserveForm.reset();
+      if (dateInput) {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        dateInput.value = tomorrow.toISOString().split('T')[0];
+      }
     });
 
     // 設定預設預約日期為明日

@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="萌萃女僕手沖咖啡廳｜專為主人挑選的頂級莊園高階咖啡豆，由溫柔女僕為您親手滴濾，享受兼具萌系互動與專業精品風味的極致時光。">
+  <title>萌萃女僕手沖咖啡廳｜主人，讓女僕為您親手沖一杯極致莊園咖啡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink-primary: #ff7597;
+      --pink-deep: #d8436b;
+      --pink-soft: #ffeef3;
+      --pink-light: #fff5f8;
+      --cream: #fffaf7;
+      --coffee-dark: #3a221d;
+      --coffee-rich: #5c352c;
+      --coffee-accent: #8b5242;
+      --sky-blue: #75c6e8;
+      --sky-blue-deep: #2a4c68;
+      --sky-blue-footer: #1e3a52;
+      --gold: #d4a359;
+      --gold-light: #fae8ca;
+      --line: #f3d4dc;
+      --text-muted: #826369;
+      --white: #ffffff;
+      --shadow-pink: 0 16px 40px rgba(216, 67, 107, 0.14);
+      --shadow-soft: 0 10px 30px rgba(58, 34, 29, 0.08);
+      --radius-sm: 8px;
+      --radius-md: 18px;
+      --radius-lg: 32px;
+      --radius-pill: 9999px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--coffee-dark);
+      background-color: var(--cream);
+      font-family: "Zen Maru Gothic", "Noto Sans TC", sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    button { cursor: pointer; }
+
+    .wrap {
+      width: min(1140px, calc(100% - 44px));
+      margin: 0 auto;
+    }
+
+    .serif { font-family: "Noto Serif TC", serif; }
+    .en-font { font-family: "Playfair Display", serif; }
+
+    /* 徽章與小標 */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      background: var(--pink-soft);
+      color: var(--pink-deep);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      margin-bottom: 14px;
+    }
+    .eyebrow::before {
+      content: "♡";
+      font-size: 14px;
+      color: var(--pink-primary);
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 52px;
+    }
+
+    .section-title {
+      margin: 0 0 14px;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 900;
+      line-height: 1.35;
+      color: var(--coffee-dark);
+      letter-spacing: .02em;
+    }
+    .section-title em {
+      font-style: normal;
+      color: var(--pink-deep);
+      position: relative;
+    }
+    .section-title em::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      width: 100%;
+      height: 7px;
+      background: rgba(255, 117, 151, 0.25);
+      border-radius: 4px;
+      z-index: -1;
+    }
+
+    .section-sub {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    /* 按鈕元件 */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 12px 28px;
+      border: 2px solid transparent;
+      border-radius: var(--radius-pill);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      transition: all .25s ease;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--pink-primary), var(--pink-deep));
+      color: var(--white);
+      box-shadow: 0 10px 24px rgba(216, 67, 107, 0.32);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px rgba(216, 67, 107, 0.42);
+      background: linear-gradient(135deg, #ff85a5, #e44b75);
+    }
+    .btn-coffee {
+      background: var(--coffee-dark);
+      color: var(--white);
+      box-shadow: 0 8px 20px rgba(58, 34, 29, 0.2);
+    }
+    .btn-coffee:hover {
+      background: var(--coffee-rich);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(58, 34, 29, 0.28);
+    }
+    .btn-outline-pink {
+      border-color: var(--pink-primary);
+      color: var(--pink-deep);
+      background: var(--white);
+    }
+    .btn-outline-pink:hover {
+      background: var(--pink-soft);
+      transform: translateY(-2px);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--pink-primary);
+      outline-offset: 4px;
+    }
+
+    /* =========================================================
+       Header 頂部導覽列
+       ========================================================= */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      background: rgba(255, 250, 247, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(243, 212, 220, 0.7);
+      transition: all .3s ease;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff8ba7, #ff6584);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 22px;
+      box-shadow: 0 6px 14px rgba(216, 67, 107, 0.25);
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-title {
+      font-size: 19px;
+      font-weight: 900;
+      color: var(--coffee-dark);
+      letter-spacing: .06em;
+      line-height: 1.1;
+    }
+    .brand-title span { color: var(--pink-deep); }
+    .brand-subtitle {
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: .16em;
+      margin-top: 3px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--coffee-rich);
+      position: relative;
+      padding: 6px 2px;
+      transition: color .2s ease;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--pink-primary);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform .25s ease;
+    }
+    .nav-links a:hover { color: var(--pink-deep); }
+    .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+    .nav-cta {
+      padding: 9px 20px !important;
+      font-size: 13px !important;
+      min-height: auto !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 0;
+      font-size: 26px;
+      color: var(--pink-deep);
+      padding: 6px;
+    }
+
+    /* =========================================================
+       Hero 主視覺區
+       ========================================================= */
+    .hero {
+      position: relative;
+      padding: 60px 0 90px;
+      background: radial-gradient(circle at 80% 20%, #ffe3ea 0%, rgba(255,245,248,0.4) 60%), linear-gradient(180deg, var(--cream) 0%, #fff0f4 100%);
+      overflow: hidden;
+    }
+    .hero-decor-circle {
+      position: absolute;
+      top: -120px;
+      right: -100px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      border: 2px dashed rgba(255, 117, 151, 0.28);
+      pointer-events: none;
+    }
+    .hero-decor-heart {
+      position: absolute;
+      font-size: 32px;
+      color: rgba(255, 117, 151, 0.35);
+      animation: floatHeart 6s infinite ease-in-out;
+      pointer-events: none;
+    }
+    .heart-1 { top: 15%; left: 8%; animation-delay: 0s; }
+    .heart-2 { bottom: 18%; left: 45%; animation-delay: 2s; font-size: 24px; }
+    .heart-3 { top: 25%; right: 42%; animation-delay: 4s; font-size: 20px; }
+
+    @keyframes floatHeart {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-16px) rotate(10deg); }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .badge-maid {
+      background: #ffe3eb;
+      color: var(--pink-deep);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid #ffd1df;
+    }
+    .badge-coffee {
+      background: #f4ece4;
+      color: var(--coffee-rich);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid #e5d7cc;
+    }
+
+    .hero-title {
+      font-size: clamp(34px, 4.8vw, 56px);
+      font-weight: 900;
+      line-height: 1.28;
+      margin: 0 0 20px;
+      color: var(--coffee-dark);
+      letter-spacing: .02em;
+    }
+    .hero-title .highlight {
+      color: var(--pink-deep);
+      background: linear-gradient(120deg, var(--pink-primary), var(--pink-deep));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-lede {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 0 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-top: 20px;
+      border-top: 1px dashed var(--line);
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--coffee-accent);
+    }
+    .trust-item span { color: var(--pink-primary); font-size: 16px; }
+
+    /* Hero 右側互動卡與手沖視覺 (依據 onepage2.md 規格，值班女僕為 Mizu，使用既有圖片) */
+    .hero-visual-card {
+      position: relative;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px 30px;
+      box-shadow: var(--shadow-pink);
+      border: 2px solid #ffe7ee;
+      text-align: center;
+    }
+    .maid-greeting {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      background: #fff0f5;
+      border-radius: var(--radius-pill);
+      color: var(--pink-deep);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 22px;
+      animation: pulseGreeting 2.5s infinite ease-in-out;
+    }
+    @keyframes pulseGreeting {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+
+    /* 右欄圖片 (依據 onepage2.md 規格：不使用 CSS 插畫，使用既有圖片 images/Gemini_Generated_Image_8j1kzm8j1kzm8j1k.jpg) */
+    .visual-art-box {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 25px rgba(216, 67, 107, 0.15);
+      border: 2px solid #ffe3eb;
+    }
+    .hero-photo {
+      width: 400px;
+      max-width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      transition: transform .35s ease;
+    }
+    .hero-photo:hover {
+      transform: scale(1.03);
+    }
+
+    .card-coffee-spec {
+      display: flex;
+      justify-content: space-around;
+      background: var(--pink-soft);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      margin-bottom: 20px;
+    }
+    .spec-point { display: flex; flex-direction: column; }
+    .spec-point strong { color: var(--pink-deep); font-size: 17px; font-family: "Playfair Display", serif; }
+    .spec-point span { font-size: 11px; color: var(--text-muted); font-weight: 700; }
+
+    .magic-brew-btn {
+      width: 100%;
+      border: 2px dashed var(--pink-primary);
+      background: #fff8fa;
+      color: var(--pink-deep);
+      border-radius: var(--radius-pill);
+      padding: 12px;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all .2s ease;
+    }
+    .magic-brew-btn:hover {
+      background: var(--pink-deep);
+      color: var(--white);
+      border-style: solid;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(216, 67, 107, 0.25);
+    }
+
+    /* =========================================================
+       特色與理念 (Philosophy & Concept)
+       ========================================================= */
+    .concept {
+      padding: 100px 0;
+      background: var(--white);
+      position: relative;
+    }
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .concept-card {
+      background: var(--pink-light);
+      border: 1px solid #ffe3ec;
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+      text-align: center;
+      transition: transform .25s ease, box-shadow .25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .concept-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-pink);
+      border-color: #ffccd9;
+    }
+    .concept-icon {
+      width: 66px;
+      height: 66px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: var(--white);
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      color: var(--pink-deep);
+      box-shadow: 0 8px 20px rgba(216, 67, 107, 0.12);
+    }
+    .concept-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--coffee-dark);
+      margin: 0 0 12px;
+    }
+    .concept-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin: 0;
+    }
+    .concept-tag {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 3px 12px;
+      background: #ffe3eb;
+      color: var(--pink-deep);
+      border-radius: var(--radius-pill);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       頂級咖啡豆菜單 (High-End Beans Menu)
+       ========================================================= */
+    .menu-section {
+      padding: 100px 0 110px;
+      background: var(--pink-soft);
+      position: relative;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+    .coffee-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px 26px;
+      box-shadow: var(--shadow-soft);
+      border: 2px solid transparent;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all .28s ease;
+    }
+    .coffee-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-pink);
+      border-color: #ffb8cb;
+    }
+    .coffee-card.recommended {
+      border-color: var(--pink-primary);
+      background: linear-gradient(180deg, #ffffff 0%, #fff7f9 100%);
+    }
+    .recommend-badge {
+      position: absolute;
+      top: -14px;
+      right: 24px;
+      background: linear-gradient(135deg, var(--pink-primary), var(--pink-deep));
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 6px 14px rgba(216, 67, 107, 0.35);
+      letter-spacing: .08em;
+    }
+    .coffee-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .coffee-origin {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--pink-deep);
+      letter-spacing: .12em;
+    }
+    .coffee-grade {
+      font-size: 10px;
+      font-weight: 800;
+      background: #fbf0dc;
+      color: #9c6c21;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .coffee-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--coffee-dark);
+      margin: 0 0 8px;
+      line-height: 1.35;
+    }
+    .coffee-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 0 0 16px;
+    }
+
+    .notes-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 22px;
+    }
+    .note-pill {
+      background: var(--pink-light);
+      color: var(--coffee-accent);
+      border: 1px solid #ffdbe4;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+    }
+
+    .coffee-params {
+      background: #faf7f5;
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    .coffee-params div b { color: var(--coffee-dark); font-weight: 700; }
+
+    .card-footer {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 18px;
+      border-top: 1px solid #f6e4ea;
+    }
+    .price-tag {
+      display: flex;
+      flex-direction: column;
+    }
+    .price-num {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--pink-deep);
+      font-family: "Playfair Display", serif;
+      line-height: 1;
+    }
+    .price-unit {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .btn-add-coffee {
+      padding: 10px 18px;
+      font-size: 13px;
+      min-height: 42px;
+    }
+
+    /* =========================================================
+       女僕互動與手沖儀式 (Interactive Rituals)
+       ========================================================= */
+    .ritual {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .ritual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .ritual-interactive-box {
+      background: linear-gradient(145deg, #fff2f6, #ffe6ee);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      border: 2px solid #ffd2df;
+      box-shadow: var(--shadow-pink);
+      position: relative;
+    }
+    .interactive-maid-avatar {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff9bb5, #ff6b8b);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 42px;
+      box-shadow: 0 10px 22px rgba(216, 67, 107, 0.28);
+      border: 4px solid var(--white);
+    }
+    .dialogue-bubble {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      position: relative;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 18px rgba(216, 67, 107, 0.08);
+      border: 1px solid #ffd9e3;
+    }
+    .dialogue-bubble::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 0 10px 10px 10px;
+      border-style: solid;
+      border-color: transparent transparent var(--white) transparent;
+    }
+    .dialogue-text {
+      margin: 0;
+      font-size: 14px;
+      color: var(--coffee-dark);
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .maid-buttons-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .interact-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      background: var(--white);
+      border: 2px solid #ffccd9;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      color: var(--coffee-dark);
+      font-size: 14px;
+      transition: all .2s ease;
+      cursor: pointer;
+    }
+    .interact-btn:hover {
+      background: #ffeef3;
+      border-color: var(--pink-primary);
+      color: var(--pink-deep);
+      transform: translateX(4px);
+    }
+    .interact-btn span { color: var(--pink-primary); }
+
+    .ritual-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .step-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      background: var(--pink-light);
+      border: 1px solid #ffe7ee;
+      transition: transform .2s ease;
+    }
+    .step-item:hover { transform: translateX(6px); }
+    .step-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink-primary), var(--pink-deep));
+      color: var(--white);
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      box-shadow: 0 6px 14px rgba(216, 67, 107, 0.25);
+    }
+    .step-content h4 {
+      margin: 0 0 6px;
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--coffee-dark);
+    }
+    .step-content p {
+      margin: 0;
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       預約歸宅與專屬優惠 (Reservation & CTA)
+       ========================================================= */
+    .reserve-section {
+      padding: 95px 0;
+      background: linear-gradient(135deg, #3a221d 0%, #57332a 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .reserve-section::before {
+      content: "";
+      position: absolute;
+      top: -80px;
+      left: -80px;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 117, 151, 0.2);
+    }
+    .reserve-section::after {
+      content: "";
+      position: absolute;
+      bottom: -100px;
+      right: -80px;
+      width: 440px;
+      height: 440px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 117, 151, 0.15) 0%, transparent 70%);
+    }
+
+    .reserve-card {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .reserve-card .section-title { color: var(--white); }
+    .reserve-card .section-sub { color: rgba(255, 255, 255, 0.78); }
+    .reserve-card .eyebrow {
+      background: rgba(255, 117, 151, 0.22);
+      color: #ff9ab3;
+    }
+
+    .reserve-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 36px 0 20px;
+      text-align: left;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #ffd6e0;
+      letter-spacing: .06em;
+    }
+    .form-group input, .form-group select {
+      height: 48px;
+      padding: 10px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      outline: none;
+      transition: all .2s ease;
+    }
+    .form-group select option { color: var(--coffee-dark); background: var(--white); }
+    .form-group input::placeholder { color: rgba(255, 255, 255, 0.5); }
+    .form-group input:focus, .form-group select:focus {
+      border-color: var(--pink-primary);
+      background: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 0 0 3px rgba(255, 117, 151, 0.3);
+    }
+    .form-group.full { grid-column: span 2; }
+
+    .reserve-submit {
+      width: 100%;
+      margin-top: 10px;
+      font-size: 16px;
+      box-shadow: 0 10px 26px rgba(255, 117, 151, 0.4);
+    }
+    .reserve-note {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.6);
+      margin: 14px 0 0;
+    }
+
+    /* =========================================================
+       頁尾 (Footer) - 依據 onepage.md 最新規格，採用天空藍深色系
+       ========================================================= */
+    .site-footer {
+      background: linear-gradient(135deg, var(--sky-blue-footer) 0%, #15293c 100%);
+      color: rgba(255, 255, 255, 0.78);
+      padding: 60px 0 25px;
+      border-top: 2px solid rgba(117, 198, 232, 0.3);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 45px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .footer-brand h4 {
+      color: var(--white);
+      font-size: 20px;
+      margin: 0 0 12px;
+      font-weight: 800;
+    }
+    .footer-brand h4 span { color: var(--sky-blue); }
+    .footer-brand p {
+      font-size: 13.5px;
+      line-height: 1.8;
+      max-width: 320px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .footer-heading {
+      color: var(--sky-blue);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      margin: 0 0 16px;
+    }
+    .footer-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 13.5px;
+    }
+    .footer-list li + li { margin-top: 10px; }
+    .footer-list a {
+      color: rgba(255, 255, 255, 0.8);
+      transition: color .2s ease;
+    }
+    .footer-list a:hover { color: var(--white); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 22px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.55);
+    }
+    .footer-bottom span + span { color: var(--sky-blue); }
+
+    /* =========================================================
+       Toast 通知彈窗
+       ========================================================= */
+    .toast {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 999;
+      max-width: 360px;
+      background: var(--white);
+      color: var(--coffee-dark);
+      border-left: 5px solid var(--pink-primary);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      box-shadow: 0 14px 40px rgba(58, 34, 29, 0.2);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.6;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(16px);
+      transition: all .28s ease;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .toast.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    .toast-icon {
+      font-size: 24px;
+      color: var(--pink-primary);
+      flex-shrink: 0;
+    }
+
+    /* 愛心噴發粒子特效容器 */
+    .particles-container {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      overflow: hidden;
+    }
+    .particle {
+      position: absolute;
+      pointer-events: none;
+      font-size: 22px;
+      animation: heartFall 1.8s forwards ease-out;
+    }
+    @keyframes heartFall {
+      0% { transform: translateY(0) scale(0.6) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(300px) scale(1.3) rotate(45deg); opacity: 0; }
+    }
+
+    /* =========================================================
+       響應式斷點 (RWD)
+       ========================================================= */
+    @media (max-width: 860px) {
+      .menu-toggle { display: block; }
+      .nav-menu {
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 12px 30px rgba(58, 34, 29, 0.08);
+        transition: max-height .3s ease;
+        gap: 0;
+      }
+      .nav-menu.open {
+        max-height: 380px;
+        padding: 20px 0;
+      }
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+      }
+      .nav-links li { width: 100%; text-align: center; }
+      .nav-links a {
+        display: block;
+        padding: 12px 20px;
+        border-bottom: 1px solid #fff0f5;
+      }
+      .nav-cta {
+        margin: 16px auto 0 !important;
+        display: inline-flex !important;
+      }
+
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-visual-card { max-width: 480px; margin: 0 auto; }
+
+      .concept-grid, .menu-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .ritual-grid { grid-template-columns: 1fr; }
+      .reserve-form { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: span 1; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    }
+
+    @media (max-width: 540px) {
+      .wrap { width: calc(100% - 32px); }
+      .hero { padding: 40px 0 70px; }
+      .hero-title { font-size: 32px; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .section-title { font-size: 26px; }
+      .concept, .menu-section, .ritual, .reserve-section { padding: 70px 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 愛心粒子容器 -->
+  <div class="particles-container" id="particlesContainer" aria-hidden="true"></div>
+
+  <!-- 頂部導覽列 -->
+  <header class="site-header" id="top">
+    <div class="wrap navbar">
+      <a class="brand" href="#top" aria-label="回到萌萃女僕咖啡廳首頁">
+        <div class="brand-icon" aria-hidden="true">☕</div>
+        <div class="brand-text">
+          <div class="brand-title">萌萃<span>女僕手沖咖啡</span></div>
+          <div class="brand-subtitle">MOE DRIP MAID CAFÉ</div>
+        </div>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="navMenu">☰</button>
+
+      <nav class="nav-menu" id="navMenu" aria-label="主要導覽">
+        <ul class="nav-links">
+          <li><a href="#concept">品牌堅持</a></li>
+          <li><a href="#menu">莊園選豆</a></li>
+          <li><a href="#ritual">女僕手沖儀式</a></li>
+          <li><a href="#reserve">預約歸宅</a></li>
+        </ul>
+        <a class="btn btn-primary nav-cta" href="#reserve">立即預約席次 ♡</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 主視覺 Hero 區塊 -->
+    <section class="hero" aria-labelledby="heroHeading">
+      <div class="hero-decor-circle" aria-hidden="true"></div>
+      <div class="hero-decor-heart heart-1" aria-hidden="true">♡</div>
+      <div class="hero-decor-heart heart-2" aria-hidden="true">♡</div>
+      <div class="hero-decor-heart heart-3" aria-hidden="true">♡</div>
+
+      <div class="wrap hero-grid">
+        <div>
+          <div class="hero-badge-group">
+            <span class="badge-maid">♡ 日系女僕貼心互動</span>
+            <span class="badge-coffee">SCA 認證・高階莊園咖啡豆</span>
+          </div>
+          <h1 class="hero-title" id="heroHeading">
+            主人，歡迎回家！<br>
+            讓女僕為您親手<br>
+            滴濾<span class="highlight">極致芳醇</span>的時光。
+          </h1>
+          <p class="hero-lede">
+            打破「女僕咖啡廳只有甜點」的印象！萌萃嚴選 COE 卓越杯與高海拔莊園精品生豆，由受過專業訓練的女僕咖啡師為您現場研磨、手沖注水並施展美味魔法，讓每一口都甘甜回甘。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#menu">探索本季頂級選豆 →</a>
+            <a class="btn btn-outline-pink" href="#ritual">體驗女僕手沖儀式</a>
+          </div>
+          <div class="hero-trust">
+            <div class="trust-item"><span>✦</span> 100% 莊園單一產區豆</div>
+            <div class="trust-item"><span>✦</span> 現磨 92°C 溫控注水</div>
+            <div class="trust-item"><span>✦</span> 尊享女僕專屬互動</div>
+          </div>
+        </div>
+
+        <!-- Hero 右側互動手沖卡片 (依據 onepage2.md 規格，值班女僕為 Mizu，使用既有圖片) -->
+        <div class="hero-visual-card">
+          <div class="maid-greeting">
+            <span>(◍•ᴗ•◍)</span> 今日值班女僕「Mizu」為您服務中
+          </div>
+
+          <!-- 右欄圖片 (依據 onepage2.md 規格：不使用 CSS 插畫，使用既有圖片) -->
+          <div class="visual-art-box">
+            <img class="hero-photo" src="images/Gemini_Generated_Image_8j1kzm8j1kzm8j1k.jpg" width="400" height="300" alt="萌萃女僕手沖咖啡主視覺" onerror="if(this.src.indexOf('hero.jpg')===-1)this.src='images/hero.jpg';">
+          </div>
+
+          <div class="card-coffee-spec">
+            <div class="spec-point">
+              <strong>92°C</strong>
+              <span>甜蜜黃金水溫</span>
+            </div>
+            <div class="spec-point">
+              <strong>1 : 15</strong>
+              <span>粉水黃金萃取比</span>
+            </div>
+            <div class="spec-point">
+              <strong>2'30''</strong>
+              <span>慢萃呼吸時光</span>
+            </div>
+          </div>
+
+          <button class="magic-brew-btn" id="magicSpellBtn" type="button">
+            <span>✨</span> 點我！讓女僕施展美味魔法咒語
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 品牌特色與堅持 -->
+    <section class="concept" id="concept" aria-labelledby="conceptHeading">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">OUR PHILOSOPHY</div>
+          <h2 class="section-title" id="conceptHeading">把<em>最極致的咖啡</em>，交給最溫柔的女僕</h2>
+          <p class="section-sub">我們相信，頂級咖啡豆的澄澈風味與女僕溫暖的笑容，能交織出全世界最療癒的一杯手沖。</p>
+        </div>
+
+        <div class="concept-grid">
+          <article class="concept-card">
+            <div class="concept-icon" aria-hidden="true">👑</div>
+            <h3>頂級高階咖啡豆</h3>
+            <p>嚴選巴拿馬翡翠莊園、衣索比亞等頂級微批次莊園豆，小批次新鮮烘焙，花香與果酸飽滿明亮。</p>
+            <span class="concept-tag">Specialty Grade</span>
+          </article>
+
+          <article class="concept-card">
+            <div class="concept-icon" aria-hidden="true">🎀</div>
+            <h3>女僕一對一手沖</h3>
+            <p>每一杯咖啡皆在主人面前現場手沖，依主人口味調整水流注水節奏，並細心解說產區風土與香氣層次。</p>
+            <span class="concept-tag">Tableside Drip</span>
+          </article>
+
+          <article class="concept-card">
+            <div class="concept-icon" aria-hidden="true">💖</div>
+            <h3>幸福專屬互動</h3>
+            <p>專屬手沖杯拉花魔法、手寫風味小卡、品飲互動與拍照紀念，讓主人每次歸宅都帶著滿滿能量離開。</p>
+            <span class="concept-tag">Heartfelt Interaction</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 本季頂級莊園手沖咖啡菜單 -->
+    <section class="menu-section" id="menu" aria-labelledby="menuHeading">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">HIGH-END SELECTION</div>
+          <h2 class="section-title" id="menuHeading">今天，主人想品嚐哪款<em>莊園風味</em>？</h2>
+          <p class="section-sub">全品項皆附贈【女僕現場手沖服務】與【專屬拍立得手寫風味紀念卡】</p>
+        </div>
+
+        <div class="menu-grid">
+          <!-- 咖啡卡 1 -->
+          <article class="coffee-card recommended">
+            <span class="recommend-badge">主人人氣 NO.1</span>
+            <div class="coffee-meta">
+              <span class="coffee-origin">PANAMA · BOQUETE</span>
+              <span class="coffee-grade">藝伎 GEISHA</span>
+            </div>
+            <h3 class="coffee-title">巴拿馬・翡翠莊園<br>粉紅標藝伎</h3>
+            <p class="coffee-subtitle">高海拔慢熟，極致優雅的白花與柑橘爆發力</p>
+            <div class="notes-list">
+              <span class="note-pill">茉莉花香</span>
+              <span class="note-pill">佛手柑</span>
+              <span class="note-pill">荔枝甜感</span>
+              <span class="note-pill">高山蜂蜜</span>
+            </div>
+            <div class="coffee-params">
+              <div>處理法：<b>日曬 Slow Dry</b></div>
+              <div>焙度：<b>淺焙 Light Roast</b></div>
+              <div>海拔：<b>1,800m+</b></div>
+              <div>女僕推薦度：<b>★★★★★</b></div>
+            </div>
+            <div class="card-footer">
+              <div class="price-tag">
+                <span class="price-num">NT$ 480</span>
+                <span class="price-unit">含女僕專屬手沖席次</span>
+              </div>
+              <button class="btn btn-primary btn-add-coffee" type="button" data-coffee="巴拿馬・翡翠莊園 藝伎">
+                點單收藏 ＋
+              </button>
+            </div>
+          </article>
+
+          <!-- 咖啡卡 2 -->
+          <article class="coffee-card">
+            <div class="coffee-meta">
+              <span class="coffee-origin">ETHIOPIA · YIRGACHEFFE</span>
+              <span class="coffee-grade">G1 水洗處理</span>
+            </div>
+            <h3 class="coffee-title">衣索比亞・耶加雪菲<br>粉櫻果漾</h3>
+            <p class="coffee-subtitle">宛如在盛開櫻花樹下漫步的清新果茶酸甜感</p>
+            <div class="notes-list">
+              <span class="note-pill">粉紅葡萄柚</span>
+              <span class="note-pill">白桃</span>
+              <span class="note-pill">接骨木花</span>
+              <span class="note-pill">綠茶回甘</span>
+            </div>
+            <div class="coffee-params">
+              <div>處理法：<b>雙重水洗</b></div>
+              <div>焙度：<b>極淺焙 Cinnamon</b></div>
+              <div>海拔：<b>2,100m</b></div>
+              <div>酸質表現：<b>活潑多汁</b></div>
+            </div>
+            <div class="card-footer">
+              <div class="price-tag">
+                <span class="price-num">NT$ 360</span>
+                <span class="price-unit">含女僕專屬手沖席次</span>
+              </div>
+              <button class="btn btn-coffee btn-add-coffee" type="button" data-coffee="衣索比亞・粉櫻果漾">
+                點單收藏 ＋
+              </button>
+            </div>
+          </article>
+
+          <!-- 咖啡卡 3 -->
+          <article class="coffee-card">
+            <div class="coffee-meta">
+              <span class="coffee-origin">KENYA · NYERI</span>
+              <span class="coffee-grade">TOP AA 水洗</span>
+            </div>
+            <h3 class="coffee-title">肯亞・涅里高地<br>紅寶石黑加侖</h3>
+            <p class="coffee-subtitle">層次深邃飽滿，尾韻散發黑醋栗與焦糖甜香</p>
+            <div class="notes-list">
+              <span class="note-pill">黑醋栗</span>
+              <span class="note-pill">洛神花茶</span>
+              <span class="note-pill">覆盆莓</span>
+              <span class="note-pill">黑糖尾韻</span>
+            </div>
+            <div class="coffee-params">
+              <div>處理法：<b>傳統肯亞式水洗</b></div>
+              <div>焙度：<b>淺中焙 Medium-Light</b></div>
+              <div>海拔：<b>1,750m</b></div>
+              <div>口感厚度：<b>圓潤飽滿</b></div>
+            </div>
+            <div class="card-footer">
+              <div class="price-tag">
+                <span class="price-num">NT$ 380</span>
+                <span class="price-unit">含女僕專屬手沖席次</span>
+              </div>
+              <button class="btn btn-coffee btn-add-coffee" type="button" data-coffee="肯亞・紅寶石黑加侖">
+                點單收藏 ＋
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 女僕手沖儀式與互動步驟 -->
+    <section class="ritual" id="ritual" aria-labelledby="ritualHeading">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">INTERACTIVE RITUAL</div>
+          <h2 class="section-title" id="ritualHeading">女僕專屬的<em>三段式手沖互動</em></h2>
+          <p class="section-sub">不只是一杯咖啡，更是一段專為主人量身打造的放鬆旅程。</p>
+        </div>
+
+        <div class="ritual-grid">
+          <!-- 左側互動卡 -->
+          <div class="ritual-interactive-box">
+            <div class="interactive-maid-avatar" aria-hidden="true">🎀</div>
+            <div class="dialogue-bubble">
+              <p class="dialogue-text" id="maidDialogue">
+                「主人～今天上班辛苦了！讓女僕 Mizu 為您調製一杯香甜的花果香手沖，掃去一整天的疲憊吧♡」
+              </p>
+            </div>
+            <div class="maid-buttons-group">
+              <button class="interact-btn" type="button" data-phrase="「主人！今天推薦您品嚐藝伎咖啡，帶有淡淡茉莉花香，就像女僕的心意一樣純淨呢♡」">
+                <span>💬</span> 請女僕推薦今日咖啡豆
+              </button>
+              <button class="interact-btn" type="button" data-phrase="「美味變變變～萌え萌えキュン！這杯咖啡注入了女僕 Mizu 的滿滿元氣，主人喝了要元氣滿滿喔✨」">
+                <span>🪄</span> 施展美味加倍魔法咒語
+              </button>
+              <button class="interact-btn" type="button" data-phrase="「好的主人！女僕正在為您手寫專屬風味卡，待會會親手送到您手中喔♡」">
+                <span>📝</span> 索取女僕手繪風味紀念卡
+              </button>
+            </div>
+          </div>
+
+          <!-- 右側步驟清單 -->
+          <div class="ritual-steps">
+            <div class="step-item">
+              <div class="step-number">01</div>
+              <div class="step-content">
+                <h4>聞香選豆・傾聽心事</h4>
+                <p>女僕將現磨莊園咖啡粉帶至主人面前，邀請主人輕輕嗅吸乾香，並依據主人今日心情挑選最適合的風味調性。</p>
+              </div>
+            </div>
+
+            <div class="step-item">
+              <div class="step-number">02</div>
+              <div class="step-content">
+                <h4>92°C 溫控滴濾・美味魔法</h4>
+                <p>女僕以優雅手勢穩健繞圈注水，悶蒸釋放深層甜感；主人可與女僕一同念出「美味加倍」咒語，讓咖啡更具風味溫度。</p>
+              </div>
+            </div>
+
+            <div class="step-item">
+              <div class="step-number">03</div>
+              <div class="step-content">
+                <h4>分享杯品飲・手寫拍立得</h4>
+                <p>將萃取完成的澄澈咖啡分裝於溫熱手作陶杯，女僕親手遞上並附上親筆寫下沖煮參數與祝福的專屬手繪紀念小卡。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 預約歸宅與專屬優惠表單 -->
+    <section class="reserve-section" id="reserve" aria-labelledby="reserveHeading">
+      <div class="wrap">
+        <div class="reserve-card">
+          <div class="eyebrow">WELCOME HOME, MASTER</div>
+          <h2 class="section-title" id="reserveHeading">預約歸宅席次，領取女僕手沖禮券</h2>
+          <p class="section-sub">首次線上預約歸宅的主人，可享【首杯莊園手沖 9 折】與【女僕拍立得紀念合照乙張】</p>
+
+          <form class="reserve-form" id="reserveForm">
+            <div class="form-group">
+              <label for="masterName">主人的尊稱或暱稱 *</label>
+              <input type="text" id="masterName" placeholder="例如：宛芯主人 / 呂大人" required>
+            </div>
+
+            <div class="form-group">
+              <label for="masterEmail">電子信箱 (發送確認信與折價券) *</label>
+              <input type="email" id="masterEmail" placeholder="master@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="reserveDate">預計歸宅日期 *</label>
+              <input type="date" id="reserveDate" required>
+            </div>
+
+            <div class="form-group">
+              <label for="coffeePreference">偏好的咖啡風味風格</label>
+              <select id="coffeePreference">
+                <option value="花香果酸系">清新花香果酸系（藝伎、耶加雪菲）</option>
+                <option value="飽滿果汁系">多汁濃郁黑醋栗系（肯亞 AA）</option>
+                <option value="焦糖堅果系">醇厚堅果可可系（中南美洲莊園）</option>
+                <option value="由女僕全權推薦">交由女僕咖啡師全權推薦 ♡</option>
+              </select>
+            </div>
+
+            <div class="form-group full">
+              <button class="btn btn-primary reserve-submit" type="submit">
+                送出預約・等候女僕迎接主人 ♡
+              </button>
+            </div>
+          </form>
+
+          <p class="reserve-note">※ 預約完成後，我們將於 1 小時內將確認編號與專屬優惠券寄送至您的信箱。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 頁尾 (依據 onepage.md 最新規格，採用天空藍深色系) -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <h4>萌萃<span>女僕手沖咖啡</span></h4>
+        <p>
+          將世界頂尖莊園的精品手沖風味，注入日系女僕的溫暖陪伴。讓每一個歸宅的午後，都成為最值得細細品味的晴朗時光。
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-heading">NAVIGATION</div>
+        <ul class="footer-list">
+          <li><a href="#concept">品牌堅持與特色</a></li>
+          <li><a href="#menu">本季高階莊園選豆</a></li>
+          <li><a href="#ritual">女僕手沖三段儀式</a></li>
+          <li><a href="#reserve">線上預約專屬席次</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-heading">VISIT US</div>
+        <ul class="footer-list">
+          <li>台北市大安區晴朗路 99 號 2 樓</li>
+          <li>電話：(02) 2345-6789</li>
+          <li>營業時間：每日 11:00 — 21:00</li>
+          <li>信箱：hello@moedrip.coffee</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap footer-bottom">
+      <span>© 2026 MOE DRIP MAID CAFÉ. ALL RIGHTS RESERVED.</span>
+      <span>PREMIUM SPECIALTY COFFEE · BREWED WITH LOVE ♡</span>
+    </div>
+  </footer>
+
+  <!-- 浮動 Toast 元件 -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <div class="toast-icon">♡</div>
+    <div class="toast-msg" id="toastMsg">已收到主人的指示！</div>
+  </div>
+
+  <script>
+    // 1. 行動版選單開關
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? '關閉導覽選單' : '開啟導覽選單');
+      menuToggle.textContent = isOpen ? '×' : '☰';
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', '開啟導覽選單');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    // 2. Toast 提示通知函式
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+    let toastTimer;
+
+    function showToast(message) {
+      window.clearTimeout(toastTimer);
+      toastMsg.textContent = message;
+      toast.classList.add('show');
+      toastTimer = window.setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // 3. 愛心飄落粒子特效
+    const particlesContainer = document.getElementById('particlesContainer');
+    function burstHearts(count = 15) {
+      const heartChars = ['♡', '♥', '✨', '💖', '☕'];
+      for (let i = 0; i < count; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.textContent = heartChars[Math.floor(Math.random() * heartChars.length)];
+        p.style.left = (Math.random() * 80 + 10) + 'vw';
+        p.style.top = (Math.random() * 30 + 10) + 'vh';
+        p.style.color = Math.random() > 0.5 ? '#ff7597' : '#d8436b';
+        p.style.animationDuration = (Math.random() * 1 + 1.2) + 's';
+        particlesContainer.appendChild(p);
+
+        setTimeout(() => p.remove(), 2000);
+      }
+    }
+
+    // 4. 女僕魔法咒語按鈕 (Hero 區)
+    const magicSpellBtn = document.getElementById('magicSpellBtn');
+    magicSpellBtn.addEventListener('click', () => {
+      burstHearts(22);
+      showToast('✨ 萌え萌えキュン～女僕已為咖啡注入美味魔法！甜感升級 100% ♡');
+    });
+
+    // 5. 點單收藏按鈕
+    document.querySelectorAll('[data-coffee]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const coffeeName = btn.dataset.coffee;
+        burstHearts(8);
+        showToast(`主人～已為您記下「${coffeeName}」，女僕期待親自為您沖煮唷 (◍•ᴗ•◍)♡`);
+      });
+    });
+
+    // 6. 女僕互動對話框按鈕
+    const maidDialogue = document.getElementById('maidDialogue');
+    document.querySelectorAll('[data-phrase]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        maidDialogue.textContent = btn.dataset.phrase;
+        burstHearts(10);
+        showToast('女僕開心地給了主人一個溫柔的微笑 ♡');
+      });
+    });
+
+    // 7. 預約歸宅表單提交
+    const reserveForm = document.getElementById('reserveForm');
+    reserveForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('masterName').value;
+      burstHearts(25);
+      showToast(`預約成功！歡迎 ${name} 歸宅，9 折禮券已寄至您的信箱囉 ♡`);
+      reserveForm.reset();
+      if (dateInput) {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        dateInput.value = tomorrow.toISOString().split('T')[0];
+      }
+    });
+
+    // 設定預設預約日期為明日
+    const dateInput = document.getElementById('reserveDate');
+    if (dateInput) {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      dateInput.value = tomorrow.toISOString().split('T')[0];
+    }
+  </script>
+</body>
+</html>
